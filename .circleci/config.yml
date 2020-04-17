@@ -16,6 +16,9 @@ workflows:
   build-and-test:
     jobs:
       - build
+          branches:
+            only:
+              - develop
       - test:
           requires:
             - build

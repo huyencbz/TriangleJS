@@ -23,7 +23,7 @@ workflows:
   build-and-test:
     jobs:
       - build:
-        filters:S
+        filters:
           branches:
             only:
               - /develop/

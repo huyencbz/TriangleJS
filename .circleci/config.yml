@@ -1,9 +1,6 @@
 version: 2.1
 jobs:
   build:
-    branches:
-      only:
-        - develop
     docker:
       - image: circleci/node:12.16.1
     steps:
@@ -19,6 +16,9 @@ workflows:
   build-and-test:
     jobs:
       - build
+        branches:
+          only:
+            - develop
       - test:
           requires:
             - build

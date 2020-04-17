@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run: npm install
+    branches:
+      only:
+        - develop
   test:
     docker:
       - image: circleci/node:12.16.1
@@ -16,9 +19,6 @@ workflows:
   build-and-test:
     jobs:
       - build
-          branches:
-            only:
-              - develop
       - test:
           requires:
             - build
